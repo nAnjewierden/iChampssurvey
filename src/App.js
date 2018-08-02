@@ -6,7 +6,7 @@ class App extends Component {
   constructor(){
     super()
     this.state = {
-      arrayOfQuestions : ['What is Your Favorite Color?!?!?!', 'another question']
+      arrayOfQuestions : []
     }
   }
 
@@ -16,11 +16,17 @@ class App extends Component {
     })
   }
 
+  addQuestion(){
+    this.setState({
+      arrayOfQuestions : [...this.state.arrayOfQuestions, this.state.tempQuestion]
+    })
+  }
+
   changeQuestion(i){
     let newArray = this.state.arrayOfQuestions.splice(i, 1, this.state.tempQuestion)
     console.log(newArray, this.state.arrayOfQuestions)
     this.setState({
-      arrayOfQuestions : newArray
+      arrayOfQuestions : this.state.arrayOfQuestions.splice(i, 1, this.state.tempQuestion)
     })
   }
   render() {
@@ -37,7 +43,8 @@ class App extends Component {
     return (
       <div>
        {questionBox}
-       <button>Add Question</button>
+       <input onChange={ele => this.captureNewQuestion(ele.target.value)} type='text'></input>
+       <button onClick={ele => this.addQuestion()}>Add Question</button>
       </div>
     );
   }

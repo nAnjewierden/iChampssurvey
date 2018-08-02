@@ -1,0 +1,39 @@
+
+
+==============================================NAV BAR COMPONENT========================================
+-logo links to iChamps
+-admin button that prompts Auth Component
+Auth Component
+    -checks to see if its Mo
+    -redirects back to survey page if not
+    Password Input Component
+    Enter Button Component
+    Cancel Button Component
+
+
+ADMIN PAGE
+~~~~requires authorization~~~~
+    Add New Question Component
+        -input for question 
+        -input for positive or negative
+        -input for questioning round (1st, 2nd, so on)
+        Add Button Component
+            -makes axios post call
+            
+    Current Question Component
+        -makes axios get call for current questions
+        -displays question and info
+        Edit/Make Changes Button Component
+            -makes info editable/makes axios put call
+        Delete Button Component
+            -makes axios delete call
+
+    ???Export Component???
+
+SURVEY PAGE
+~~~~home page~~~~
+    Input Component
+
+    Question Component
+
+    Submit Button Component
