@@ -18,8 +18,9 @@ massive(process.env.CONNECTION_STRING).then((dbInstance) => {
 
 app.get('/getCurrentQuestions', ((req, res) => {
     const dbInstance = req.app.get('db')
-    dbInstance.getAllQuestions().then(questions =>{
+    dbInstance.get_current_questions().then(questions =>{
         res.status(200).send(questions)
+        console.log(questions)
     })
     
 }))
