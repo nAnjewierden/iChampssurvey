@@ -4,9 +4,9 @@ const massive = require('massive')
 require('dotenv').config();
 const app = express()
 
-app.use( express.static( `${__dirname}/../build` ) );
+// app.use( express.static( `${__dirname}/../build` ) );
 app.use(bodyParser.json())
-app.use(express.static('/../public/build'))
+// app.use(express.static('/../public/build'))
 
 massive(process.env.CONNECTION_STRING).then((dbInstance) => {
     dbInstance.seedFile()

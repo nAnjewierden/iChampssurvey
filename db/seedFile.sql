@@ -1,8 +1,8 @@
-CREATE if not exists current_questions(
-    ID integer serial primary key,
+CREATE Table if not exists current_questions(
+    ID serial primary key,
     question varchar(1000),
     pos_or_neg boolean
-)
+);
 
 INSERT INTO current_questions (question, pos_or_neg)
     VALUES ('question1', true),
