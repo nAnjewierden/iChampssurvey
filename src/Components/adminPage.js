@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import CurrentQuestionComponent from './currentQuestionComponent'
+import AddNewQuestion from './addNewQuestion'
 
 export default class AdminPage extends Component{
     constructor(){
@@ -10,6 +11,15 @@ export default class AdminPage extends Component{
         }
     }
     componentDidMount(){
+        axios.get('/getCurrentQuestions').then((res) =>{
+            this.setState({
+                arrayOfQuestions: res.data
+            })
+            console.log(this.state)
+        })
+        this.reMount = this.reMount.bind(this)
+    }
+    reMount(){
         axios.get('/getCurrentQuestions').then((res) =>{
             this.setState({
                 arrayOfQuestions: res.data
@@ -26,6 +36,7 @@ export default class AdminPage extends Component{
        return(
          <div>
             {listOfQuestions}
+            <AddNewQuestion reMount={this.reMount}/>
         </div>
        )
     }

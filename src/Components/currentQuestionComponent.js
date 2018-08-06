@@ -9,7 +9,7 @@ export default class CurrentQuestionComponent extends Component{
     render(){
         console.log(this.props)
         return(
-            <div>{this.props.question} {this.props.posOrNeg}</div>
+            <div>{this.props.question} {this.props.posOrNeg ? 'positive' : 'negative'}</div>
         )
     }
 }

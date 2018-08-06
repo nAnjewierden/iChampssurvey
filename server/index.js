@@ -33,6 +33,21 @@ app.get('/getAllQuestions', ((req, res) => {
     
 }))
 
+app.post('/addNewQuestion', (req, res) =>
+{
+    {
+        const dbInstance = req.app.get('db')
+        
+        const { question, PosOrNeg } = req.body
+        dbInstance.add_new_question([question, PosOrNeg])
+            .then(() => res.status(200).send('that workedM'))
+            .catch((err) => console.log(err))
+        }})
+    
+    
+
+
+
 
 const port = process.env.PORT
 app.listen(port, (() => { console.log('YAY') }))
