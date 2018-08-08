@@ -30,7 +30,7 @@ export default class AdminPage extends Component{
     render(){
         let listOfQuestions = this.state.arrayOfQuestions.map((ele) =>{
             return(
-                <div key={ele.id}><CurrentQuestionComponent question={ele.question} posOrNeg={ele.pos_or_neg}/></div>
+                <div key={ele.id}><CurrentQuestionComponent id={ele.id} question={ele.question} posOrNeg={ele.pos_or_neg} reMount={this.reMount}/></div>
             )
         })
        return(

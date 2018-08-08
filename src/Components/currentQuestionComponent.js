@@ -6,8 +6,8 @@ export default class CurrentQuestionComponent extends Component{
         super()
         this.state = {
             editable: false,
-            question: this.props.question,
-            posOrNeg: this.props.posOrNeg
+            question: '',
+            posOrNeg: ''
         }
     }
 
@@ -17,38 +17,59 @@ export default class CurrentQuestionComponent extends Component{
         })
     }
 
-    handlePosOrNeg(){
+    handlePosOrNeg(value){
         this.setState({
             posOrNeg : value
         })
     }
 
-    makeChanges(){
-        
+    makeChanges(id, question, posOrNeg){
+        axios.put(`/updateQuestion/${id}`, {
+            question,
+            posOrNeg
+        }).then((res) => {
+            this.makeEditable()
+            this.props.reMount()
+            this.setState({
+                question: '',
+                posOrNeg: ''
+            })
+            return (res.data)
+        })
     }
 
-    makeEditable(){
+    makeEditable(value){
         this.setState({
             editable : !this.state.editable
         })
     }
 
+    deleteQuestion(id){
+        axios.delete(`/deleteQuestion/${id}`).then((res) => {
+            this.props.reMount()
+            return (res.data)
+        })
+    }
+
     render(){
+        console.log(this.props)
         let returnable = this.state.editable ?
         <div>
-            <input type='text' value={this.state.question} onChange={(ele) => handleQuestion(ele.target.value)}/>
-            <input type='text' value={this.state.posOrNeg} onChange={(ele) => handlePosOrNeg(ele.target.value)}/>
-            <button onClick={() => this.makeChanges()}>Make Changes</button>
+            <input type='text' value={this.state.question} onChange={(ele) => this.handleQuestion(ele.target.value)}/>
+            <input type='text' value={this.state.posOrNeg} onChange={(ele) => this.handlePosOrNeg(ele.target.value)}/>
+            <button onClick={() => this.makeChanges(this.props.id, this.state.question, this.state.posOrNeg)}>Make Changes</button>
         </div>
         :
         <div>
             {this.props.question} 
             {this.props.posOrNeg ? 'positive' : 'negative'}
             <button onClick={() => this.makeEditable()}>Edit</button>
+            <button onClick={() => this.deleteQuestion(this.props.id)}>Delete</button>
         </div>
         
-        return(
+        return(<div>
             {returnable}
+            </div>
         )
         
     }

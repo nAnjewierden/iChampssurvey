@@ -43,9 +43,26 @@ app.post('/addNewQuestion', (req, res) =>
             .then(() => res.status(200).send('that workedM'))
             .catch((err) => console.log(err))
         }})
-    
-    
 
+app.put('/updateQuestion/:id', (req, res) => {
+    {
+        const dbInstance = req.app.get('db')
+        
+        const { question, PosOrNeg } = req.body
+        dbInstance.change_current_question([req.params.id, question, PosOrNeg])
+        .then(() => res.status(200).send('that workedM'))
+        .catch((err) => console.log(err))
+    }
+})
+
+app.delete('/deleteQuestion/:id', (req,res) => {
+    
+    const dbInstance = req.app.get('db')
+    
+    dbInstance.delete_current_question([req.params.id])
+    .then(() => res.status(200).send('that workedM'))
+    .catch((err) => console.log(err))
+})
 
 
 
