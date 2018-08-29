@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import './styleSheets/addNewQuestion.css'
 
 export default class AddNewQuestion extends Component{
     constructor(){
@@ -25,10 +26,10 @@ export default class AddNewQuestion extends Component{
     }
     render(){
         return(
-            <div>
-                <div>New Question: <input onChange={(ele) => this.handleNewQuestion(ele.target.value)} type='text'></input></div>
-                <div>Postitive or Negative?<input onChange={(ele) => this.handleNewPosOrNeg(true)} type='text'></input></div>
-                <div><button onClick={() => this.addQuestion(this.state.newQuestion, this.state.newPosOrNeg)}>Add</button></div>
+            <div className='new-question-box'>
+                <div className='input'>New Question: <input onChange={(ele) => this.handleNewQuestion(ele.target.value)} type='text'></input></div>
+                <div className='input'>Postitive or Negative?<input onChange={(ele) => this.handleNewPosOrNeg(true)} type='text'></input></div>
+                <div className='button'><button onClick={() => this.addQuestion(this.state.newQuestion, this.state.newPosOrNeg)}>Add</button></div>
             </div>
         )
     }

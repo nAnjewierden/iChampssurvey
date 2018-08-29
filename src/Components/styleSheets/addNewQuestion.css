@@ -1,0 +1,11 @@
+
+
+.new-question-box{
+    height: 20%;
+    width: 100%;
+    background: blueviolet;
+}
+
+.input{
+    display: inline;
+}

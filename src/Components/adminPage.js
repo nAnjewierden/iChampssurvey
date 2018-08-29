@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import CurrentQuestionComponent from './currentQuestionComponent'
 import AddNewQuestion from './addNewQuestion'
+import './styleSheets/adminPage.css'
 
 export default class AdminPage extends Component{
     constructor(){
@@ -34,7 +35,7 @@ export default class AdminPage extends Component{
             )
         })
        return(
-         <div>
+         <div className='full-page'>
             {listOfQuestions}
             <AddNewQuestion reMount={this.reMount}/>
         </div>
