@@ -14,7 +14,7 @@ export default class SurveyPage extends Component{
             }
         this.handleSchoolName = this.handleSchoolName.bind(this)
         this.handleGrade = this.handleGrade.bind(this)
-        this.handleSchoolNumber = this.handleStudentNumber.bind(this)
+        this.handleStudentName = this.handleStudentName.bind(this)
     }
 
     componentDidMount(){

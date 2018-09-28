@@ -5,7 +5,7 @@ CREATE Table if not exists current_questions(
 );
 
 INSERT INTO current_questions (question, pos_or_neg)
-    VALUES ('question1', true),
+    VALUES  ('question1', true),
             ('question2', false),
             ('question3', true),
             ('question4', false),

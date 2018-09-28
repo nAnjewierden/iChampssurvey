@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import logo from './logo.svg';
 import './App.css';
 import AdminPage from './Components/adminPage';
+import SurveyPage from './Components/surveyPage';
+import routes from './Routes/routes'
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-      arrayOfQuestions : []
+      arrayOfQuestions : [],
+      AUTHORIZED: false
     }
   }
 
@@ -31,11 +35,16 @@ class App extends Component {
     })
   }
   render() {
-    
-    
+   
     return (
       <div>
-       <AdminPage/>
+       <nav className="nav-bar">
+          <Link to='/' className="nav-item"><h4>SURVEY PAGE</h4></Link>
+          <Link to='/adminPage' className="nav-item"><h4>ADMIN PAGE</h4></Link>
+        </nav>
+        <div className='routeDiv'>
+        {routes}
+        </div>  
       </div>
     );
   }

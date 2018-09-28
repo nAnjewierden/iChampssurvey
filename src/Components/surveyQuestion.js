@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 
-export default class SurveyQuestion extends Componen{
+export default class SurveyQuestion extends Component{
     constructor(){
         super()
         this.state = {
@@ -43,7 +43,9 @@ export default class SurveyQuestion extends Componen{
 </datalist>
 </div>
         return (
+        <div>
            {returnable}
+        </div>
         )
     }
 }
