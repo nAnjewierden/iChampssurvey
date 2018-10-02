@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import SurveyInput from './surveyInput'
 import SurveyQuestion from './surveyQuestion'
+import './styleSheets/surveyPage.css'
 
 export default class SurveyPage extends Component{
     constructor(){
@@ -54,7 +55,7 @@ export default class SurveyPage extends Component{
             )
         })
         return(
-        <div>
+        <div className='full-page'>
             <SurveyInput handleSchoolName={this.handleSchoolName} handleGrade={this.handleGrade} handleStudentNumber={this.handleStudentNumber}/>
             {questions}
         </div>
