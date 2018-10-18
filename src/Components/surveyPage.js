@@ -49,9 +49,9 @@ export default class SurveyPage extends Component{
         let questions = this.state.arrayOfQuestions.map((ele) => {
             return(
                 
-                <div>
+                
                     <SurveyQuestion question={ele.question} posOrneg={ele.posOrneg}/>
-                </div>
+                
             )
         })
         return(

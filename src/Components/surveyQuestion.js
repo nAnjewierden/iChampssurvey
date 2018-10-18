@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import './styleSheets/surveyQuestion.css'
 
 export default class SurveyQuestion extends Component{
     constructor(){
@@ -17,9 +18,9 @@ export default class SurveyQuestion extends Component{
 
     render(){
     let returnable = this.props.posOrNeg ?
-<div>
+<div className='question-box'>
     <h3>{this.props.question}</h3>
-<input type="range" list="tickmarks" onChange={(ele) => this.handleAnswer(ele.target.value)}/>
+<input className='slider' type="range" list="tickmarks" onChange={(ele) => this.handleAnswer(ele.target.value)}/>
 
 <datalist id="tickmarks">
   <option value="1" label="1"/>
@@ -30,9 +31,9 @@ export default class SurveyQuestion extends Component{
 </datalist>
 </div>
 :
-<div>
+<div className='question-box'>
 <h3>{this.props.question}</h3>
-<input type="range" list="tickmarks" onChange={(ele) => this.handleAnswer(ele.target.value)}/>
+<input   className='slider' type="range" list="tickmarks" onChange={(ele) => this.handleAnswer(ele.target.value)}/>
 
 <datalist id="tickmarks">
   <option value="5" label="5"/>
@@ -43,7 +44,7 @@ export default class SurveyQuestion extends Component{
 </datalist>
 </div>
         return (
-        <div>
+        <div className='question-box'>
            {returnable}
         </div>
         )
