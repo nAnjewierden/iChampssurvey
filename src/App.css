@@ -15,7 +15,7 @@
  background: black
 }
 
-.nav-item{
+.nav-item-1{
  text-align: center;
  color: white;
  align-items: center;
@@ -23,6 +23,19 @@
  width: 33%;
  font-size: 30px
  
+}
+
+.nav-item-2{
+  display: none;
+  align-self: flex-end;
+  height: 100%;
+  width: 33%;
+}
+
+.nav-item-2:hover{
+  display: flex;
+  height: 100%;
+ width: 33%;
 }
 .routeDiv{
  height: 95%;
