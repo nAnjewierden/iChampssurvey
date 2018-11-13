@@ -13,6 +13,10 @@ Auth Component
 
 ADMIN PAGE
 ~~~~requires authorization~~~~
+
+    Survey Length Set Drop-Down Component
+        -drop down input sets how many question in the survey(5, 10, 15, 20)
+
     Add New Question Component
         -input for question 
         -input for positive or negative
@@ -25,13 +29,15 @@ ADMIN PAGE
         -displays question and info
         Edit/Make Changes Button Component
             -makes info editable/makes axios put call
-        Delete Button Component
-            -makes axios delete call
+        Reset Button Component
+            -resets question info to default
+            
 
     ???Export Component???
 
 SURVEY PAGE
 ~~~~home page~~~~
+Checks survey length, sets correct db call
     Input Component
 
     Question Component
