@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import { Button, ButtonGroup, ButtonToolbar } from 'reactstrap';
 import './styleSheets/surveyQuestion.css'
 
 export default class SurveyQuestion extends Component{
@@ -45,7 +46,15 @@ export default class SurveyQuestion extends Component{
 </div>
         return (
         <div className='question-box'>
-           {returnable}
+           <ButtonToolbar>
+        <ButtonGroup>
+          <Button>1</Button>
+          <Button>2</Button>
+          <Button>3</Button>
+          <Button>4</Button>
+          <Button>5</Button>
+        </ButtonGroup>
+            </ButtonToolbar>
         </div>
         )
     }

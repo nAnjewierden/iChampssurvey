@@ -12,6 +12,7 @@ export default class SurveyPage extends Component{
                 grade: '',
                 studentNumber: 0,
                 arrayOfQuestions: [],
+                amountOfQuestions: 5
             }
         this.handleSchoolName = this.handleSchoolName.bind(this)
         this.handleGrade = this.handleGrade.bind(this)
@@ -19,6 +20,40 @@ export default class SurveyPage extends Component{
     }
 
     componentDidMount(){
+        switch(this.state.amountOfQuestions){
+            case 5:
+                axios.get('/getCurrentQuestions_5').then((res) =>{
+                    this.setState({
+                        arrayOfQuestions: res.data
+                    })
+                    console.log(this.state)
+                })
+            break;
+            case 10:
+                axios.get('/getCurrentQuestions_10').then((res) =>{
+                    this.setState({
+                        arrayOfQuestions: res.data
+                    })
+                    console.log(this.state)
+                })
+            break;
+            case 15:
+                axios.get('/getCurrentQuestions_15').then((res) =>{
+                    this.setState({
+                        arrayOfQuestions: res.data
+                    })
+                    console.log(this.state)
+                })
+            break;
+            case 20:
+                axios.get('/getCurrentQuestions_20').then((res) =>{
+                    this.setState({
+                        arrayOfQuestions: res.data
+                    })
+                    console.log(this.state)
+                })
+            break;
+        }
         axios.get('/getCurrentQuestions').then((res) =>{
             this.setState({
                 arrayOfQuestions: res.data

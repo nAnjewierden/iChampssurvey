@@ -2,13 +2,13 @@ CREATE Table if not exists survey_reponses_5(
     ID serial primary key,
     name varchar(1000),
     pos_or_neg boolean,
-    answer number
+    answer integer
 );
 
 CREATE Table if not exists current_questions_5(
     ID serial primary key,
     question varchar(1000),
-    pos_or_neg boolean,
+    pos_or_neg boolean
     
 );
 
@@ -23,7 +23,7 @@ CREATE Table if not exists survey_reponses_10(
     ID serial primary key,
     name varchar(1000),
     pos_or_neg boolean,
-    answer number
+    answer integer
 );
 
 CREATE Table if not exists current_questions_10(
@@ -48,13 +48,13 @@ CREATE Table if not exists survey_reponses_15(
     ID serial primary key,
     name varchar(1000),
     pos_or_neg boolean,
-    answer number
+    answer integer
 );
 
 CREATE Table if not exists current_questions_15(
     ID serial primary key,
     question varchar(1000),
-    pos_or_neg boolean,
+    pos_or_neg boolean
 );
 
 -- INSERT INTO current_questions_15 (question, pos_or_neg)
@@ -78,13 +78,13 @@ CREATE Table if not exists survey_reponses_20(
     ID serial primary key,
     name varchar(1000),
     pos_or_neg boolean,
-    answer number
+    answer integer
 );
 
 CREATE Table if not exists current_questions_20(
     ID serial primary key,
     question varchar(1000),
-    pos_or_neg boolean,
+    pos_or_neg boolean
 );
 
 -- INSERT INTO current_questions_20 (question, pos_or_neg)
