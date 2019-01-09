@@ -48,7 +48,7 @@ export default class SurveyQuestion extends Component{
         <div className='question-box'>
            <ButtonToolbar>
         <ButtonGroup>
-          <Button>1</Button>
+          <Button color='Primary'>1</Button>
           <Button>2</Button>
           <Button>3</Button>
           <Button>4</Button>
